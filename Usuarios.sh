@@ -15,9 +15,8 @@ case "$op" in
 	1)
 	clear 
 	read -p "Ingrese el nombre del usuario a crear: " nombre
-	read -p "Ingrese la ruta de su directorio de trabajo: " ruta
 	read -p "Ingrese el grupo principal del usuario: " grupo
-	sudo useradd -d $ruta -m -s /bin/bash -g $grupo $nombre
+	sudo useradd -g $grupo $nombre
 	echo "Ingrese la contraseña del usuario: " 
 	sudo passwd $nombre
 	sleep 5;

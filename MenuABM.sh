@@ -1,5 +1,4 @@
 #!/bin/bash
-op=99
 while :
 do
 	clear

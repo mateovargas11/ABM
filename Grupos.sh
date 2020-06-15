@@ -29,7 +29,8 @@ case "$op" in
 	3)
 	clear 
 	read -p "Ingrese el nombre del grupo a modificar: " grupo
-	sudo groupmod $grupo
+	read -p "Ingrese el nuevo nombre: " grupoN
+	sudo groupmod -n $grupoN $grupo
 	echo "El grupo fue modificado correctamente.."
 	sleep 3;
 	;;
