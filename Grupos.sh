@@ -38,7 +38,7 @@ case "$op" in
 	clear 
 	read -p "Ingrese el nombre del usuario a echar: " nombre
 	read -p "Ingrese el nombre del grupo: " grupo
-	sudo deluser $nombre $grupo
+	sudo gpasswd -d $nombre $grupo
 	echo "El usuario $nombre fue quitado del grupo $grupo"
 	sleep 3;
 	;;

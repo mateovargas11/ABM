@@ -15,8 +15,9 @@ case "$op" in
 	1)
 	clear 
 	read -p "Ingrese el nombre del usuario a crear: " nombre
+	read -p "Ingrese la ruta de su directorio de trabajo: " ruta
 	read -p "Ingrese el grupo principal del usuario: " grupo
-	sudo useradd -g $grupo $nombre
+	sudo useradd -d $ruta -m -s /bin/bash -g $grupo $nombre
 	echo "Ingrese la contraseña del usuario: " 
 	sudo passwd $nombre
 	sleep 5;
@@ -29,15 +30,15 @@ case "$op" in
 	;;
 	3)
 	clear
-	read -p "Ingrese el nombre del usuario a crear: " nombre	
+	read -p "Ingrese el nombre del usuario a modificar: " nombre	
 	read -p "Ingrese la ruta de su directorio de trabajo: " ruta
 	read -p "Ingrese el grupo principal del usuario: " grupo
-	echo "----------Modificar----------"
-	echo "| 1.Nombre		  |"
-	echo "| 2.Contraseña              |"
-	echo "| 3.Directorio              |"
-	echo "| 0.Salir                   |"
-	echo "-----------------------------"
+	echo  "----------Modificar----------"
+	echo "| 1.Nombre		    |"
+	echo "| 2.Contraseña                |"
+	echo "| 3.Directorio                |"
+	echo "| 0.Salir                     |"
+	echo  "-----------------------------"
 	read -p "Opcion: " opM
 	case "$opM" in 
 		1)
